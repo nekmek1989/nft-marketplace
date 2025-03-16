@@ -1,0 +1,134 @@
+@use "../helpers/index" as *;
+
+.icon {
+  display: flex;
+  column-gap: rem(12);
+  align-items: center;
+
+  &::before {
+    --size: #{rem(20)};
+
+    @include square(var(--size));
+
+    content: '';
+    flex-shrink: 0;
+  }
+
+  &_user-icon {
+    &::before {
+      background-image: url("/src/assets/images/icons/user.svg");
+    }
+  }
+
+  &_eye {
+    &::before {
+      background-image: url("/src/assets/images/icons/eye.svg");
+    }
+  }
+
+  &_eye-white {
+    &::before {
+      background-image: url("/src/assets/images/icons/eye-white.svg");
+    }
+  }
+
+  &_mail {
+    &::before {
+      background-image: url("/src/assets/images/icons/email.svg");
+    }
+  }
+
+  &_rocket {
+    &::before {
+      background-image: url("/src/assets/images/icons/rocket.svg");
+    }
+  }
+
+  &_arrow-right {
+    &::before {
+      background-image: url("/src/assets/images/icons/arrow-right.svg");
+    }
+  }
+
+  &_user {
+    &::before {
+      --size: #{rem(24)};
+      @include square(var(--size));
+
+    }
+
+    &-black {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-black.svg");
+      }
+    }
+
+    &-fox {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-fox.svg");
+      }
+    }
+
+    &-avatar {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-avatar.svg");
+      }
+    }
+
+    &-robot {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-robot.svg");
+      }
+    }
+
+    &-woman {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-womansvg.svg");
+      }
+    }
+
+    &-black-man {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-black-man.svg");
+      }
+    }
+
+    &-black-woman {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-black-woman.svg");
+      }
+    }
+
+    &-astronaut-woman {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-astronaut-woman.svg");
+      }
+    }
+
+    &-monkey {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-monkey.svg");
+      }
+    }
+
+    &-dog {
+      &::before {
+        background-image: url("/src/assets/images/icons/user-dog.svg");
+      }
+    }
+  }
+
+  &_size-m {
+    &::before {
+      --size: #{rem(20)};
+      @include square(var(--size));
+
+    }
+
+    &-layer {
+      &::before {
+        background-image: url("/src/assets/images/icons/layers.svg");
+      }
+    }
+  }
+}

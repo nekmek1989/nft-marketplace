@@ -1,0 +1,34 @@
+@use "../helpers/index" as*;
+
+.grid {
+  --gridColumns: 1;
+
+  display: grid;
+  grid-template-columns: repeat(var(--gridColumns), 1fr);
+  gap: rem(30);
+
+  &__item {
+    justify-self: center;
+  }
+
+  @for $i from 2 through 12 {
+    &_#{$i} {
+      --gridColumns: #{$i};
+    }
+  }
+
+  @include mobile {
+    gap: rem(20);
+  }
+}
+
+.grid_3 {
+
+  @include tablet {
+    --gridColumns: 2;
+  }
+
+  @include mobile {
+    --gridColumns: 1;
+  }
+}

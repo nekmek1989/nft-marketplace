@@ -1,0 +1,99 @@
+@use "../helpers/index" as *;
+
+.overlay-place-bid {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  border: none;
+  border-radius: rem(20);
+  padding: rem(20);
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+
+    position: relative;
+  }
+
+  &__header,
+  &__form-field {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+  }
+
+  &__image {
+    @include abs-center;
+
+    max-width: none;
+    &-wrapper {
+      position: relative;
+
+      overflow: hidden;
+      width: rem(200);
+      height: rem(200);
+
+      border-radius: rem(20);
+    }
+  }
+
+  &__submit-form {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+  }
+
+  &__form-field-input {
+    border-radius: rem(20);
+    padding: rem(12) rem(20);
+
+    border: none;
+    appearance: textfield;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
+  &__close-button {
+    @include square(rem(40));
+
+    position: absolute;
+    top: rem(-7);
+    left: 85%;
+
+    background-color: transparent;
+    border-radius: rem(7);
+    border: none;
+
+    @include hover {
+      background-color: var(--color-accent);
+    }
+
+    &::after,
+    &::before {
+      @include abs-center;
+
+      content: '';
+
+      width: 60%;
+      height: rem(2);
+      background-color: var(--color-light);
+      border-radius: rem(20);
+    }
+
+    &::before {
+      rotate: 45deg;
+    }
+
+    &::after {
+      rotate: -45deg;
+    }
+  }
+
+  &::backdrop {
+    background: rgba(0, 0, 0, 0.6);
+  }
+}

@@ -1,0 +1,174 @@
+@use 'helpers/index' as *;
+
+html {
+  &.is-lock {
+    overflow: hidden;
+  }
+}
+
+
+body {
+  @include fluid-text(22, 16);
+
+  font-family: var(--font-base);
+  font-style: normal;
+  letter-spacing: 0;
+  font-weight: 400;
+  color: var(--color-light);
+
+  background-color: var(--color-dark);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-weight: 600;
+
+  &.has-accent-font {
+    font-family: var(--font-accent);
+  }
+}
+
+h1, .h1 {
+  @include fluid-text(67, 28);
+
+  line-height: 1.1;
+
+  @include tablet {
+    line-height: 1.2;
+  }
+  @include mobile {
+    line-height: 1.4;
+  }
+}
+
+h2, .h2 {
+  @include fluid-text(51, 38);
+
+  line-height: 1.1;
+
+  @include tablet {
+    line-height: 1.2;
+  }
+}
+
+h3, .h3 {
+  @include fluid-text(38, 28);
+
+  line-height: 1.2;
+
+  @include tablet {
+    line-height: 1.4;
+  }
+}
+
+h4, .h4 {
+  @include fluid-text(28, 22);
+
+  line-height: 1.4;
+
+  @include tablet {
+    line-height: 1.6;
+  }
+}
+
+h5, .h5 {
+  font-size: rem(22);
+  line-height: 1.4;
+}
+
+p, .text {
+  @include fluid-text(22, 16);
+
+  line-height: 1.6;
+
+  @include tablet {
+    line-height: 1.4;
+  }
+
+  &_size-small {
+    font-size: rem(16);
+    line-height: 1.4;
+  }
+
+  &_size-smallest {
+    font-size: rem(12);
+    line-height: 1.1;
+  }
+
+  &_has-accent-font {
+    font-family: var(--font-accent);
+  }
+
+  &_error-message {
+    color: red;
+    font-weight: 500;
+    font-size: rem(16);
+    font-family: var(--font-accent);
+    text-wrap: balance;
+  }
+}
+
+a,
+button {
+  color: inherit;
+  text-decoration: none;
+}
+
+a,
+button,
+label,
+input,
+textarea,
+select,
+svg * {
+  transition-duration: var(--transition-duration);
+}
+
+a {
+  color: inherit;
+
+  @include hover {
+    color: var(--color-accent);
+  }
+
+  &[class] {
+    text-decoration: none;
+  }
+
+  &.link-decoration {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+
+      width: 0;
+      height: rem(2);
+
+      background-color: var(--color-accent);
+      border-radius: rem(20);
+
+      transition-duration: var(--transition-duration);
+
+      top: 100%;
+      left: 50%;
+      translate: -50%;
+    }
+
+    @include hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+:focus-visible {
+  outline: rem(2) dashed var(--color-light);
+  outline-offset: rem(4);
+  transition-duration: 0s !important;
+}

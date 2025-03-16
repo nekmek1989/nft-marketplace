@@ -1,0 +1,15 @@
+@use "../helpers/index" as *;
+
+.soc1als {
+  display: flex;
+  column-gap: rem(12);
+
+  svg {
+    color: var(--color-grey);
+    transition-duration: var(--transition-duration);
+
+    @include hover {
+      opacity: 0.6;
+    }
+  }
+}

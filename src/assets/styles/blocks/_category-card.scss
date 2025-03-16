@@ -1,0 +1,91 @@
+@use "../helpers/index" as *;
+
+.category-card {
+  border-radius: rem(20);
+  transition-duration: var(--transition-duration);
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+
+    filter: blur(rem(15));
+
+    &-wrapper {
+      position: relative;
+
+      max-width: rem(240);
+      max-height: rem(240);
+
+      border-radius: rem(20) rem(20) 0 0;
+
+      overflow: hidden;
+
+      @include tablet {
+        width: rem(150);
+        height: rem(142);
+      }
+
+      @include mobile-s {
+        width: rem(115);
+        height: rem(110);
+      }
+
+      svg {
+        @include abs-center;
+
+        @include tablet {
+          @include square(rem(80))
+        }
+
+        @include mobile-s {
+          @include square(rem(50))
+        }
+      }
+    }
+
+    @include tablet {
+      width: rem(150);
+      height: rem(142);
+    }
+
+    @include mobile-s {
+      width: rem(115);
+    }
+  }
+
+  &__body {
+    background-color: var(--color-grey-dark);
+    padding: rem(20) rem(30) rem(25) rem(30);
+    border-radius: 0 0 rem(20) rem(20);
+
+    @include tablet {
+      max-width: rem(150);
+    }
+
+    @include mobile-s {
+      width: rem(115);
+      padding: rem(10) rem(15) rem(12) rem(15);
+
+    }
+  }
+
+  &__title {
+    @include tablet {
+      font-size: rem(16);
+    }
+    @include mobile-s {
+      font-size: rem(14);
+    }
+  }
+
+  svg {
+    color: var(--color-light);
+  }
+
+  @include hover {
+    box-shadow: 0 0 30px rgba(162, 89, 255, 0.5);
+  }
+}

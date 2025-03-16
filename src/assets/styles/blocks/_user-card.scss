@@ -1,0 +1,62 @@
+@use "../helpers/index" as *;
+
+.user-card {
+  &__body {
+    background-color: var(--color-grey-dark);
+    border-radius: 0 0 rem(20) rem(20);
+    padding: rem(20);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+
+    @include tablet {
+      width: rem(330);
+    }
+
+    @include mobile {
+      width: rem(315);
+    }
+
+    @include mobile-s {
+      width: rem(250);
+    }
+  }
+
+  &__image {
+    @include abs-center;
+
+    &-wrapper {
+      height: rem(401);
+      width: rem(510);
+
+      border-radius: rem(20) rem(20) 0 0;
+
+      overflow: hidden;
+      position: relative;
+
+      @include tablet {
+        height: rem(221);
+        width: rem(330);
+      }
+
+      @include mobile {
+        height: rem(206);
+        width: rem(315);
+      }
+
+      @include mobile-s {
+        height: rem(174);
+        width: rem(250);
+      }
+    }
+  }
+
+  &__profile {
+    width: max-content;
+  }
+
+  &__title-link {
+    width: max-content;
+  }
+}

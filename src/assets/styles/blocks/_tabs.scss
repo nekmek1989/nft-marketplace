@@ -1,0 +1,82 @@
+@use "../helpers/index" as *;
+
+.tabs {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+
+    border-top: rem(1) solid var(--color-grey-dark);
+  }
+
+  &__button {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    padding: 0 rem(30);
+
+    height: rem(60);
+
+    font-weight: 600;
+    color: var(--color-grey);
+
+    border-bottom: rem(2) solid transparent;
+
+    &.is-active {
+      color: var(--color-light);
+      border-bottom: rem(2) solid var(--color-grey);
+
+      .tabs__count {
+        background-color: var(--color-grey);
+      }
+    }
+
+    @include hover {
+      color: var(--color-light);
+
+      .tabs__count {
+        background-color: var(--color-grey);
+      }
+    }
+
+    @include mobile {
+      padding: rem(10);
+    }
+  }
+
+  &__count {
+    background-color: var(--color-grey-dark);
+
+    font-weight: 400;
+    font-size: rem(16);
+    font-family: var(--font-accent);
+    color: var(--color-light);
+
+    padding: rem(5) rem(10);
+    border-radius: rem(20);
+
+    transition-duration: var(--transition-duration);
+  }
+
+  &__body {
+    background-color: var(--color-grey-dark);
+    border-bottom: rem(2) solid var(--color-dark);
+
+    overflow: hidden;
+
+    &_background-alt {
+      background-color: inherit;
+    }
+  }
+
+  &__content {
+    transition-duration: var(--transition-duration);
+
+    &:not(.is-active) {
+      translate: 110%;
+
+      @include hide;
+      height: 0
+    }
+  }
+
+}

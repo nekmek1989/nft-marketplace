@@ -1,0 +1,79 @@
+@use "../helpers/index" as *;
+
+.header {
+  position: sticky;
+  z-index: 100;
+  top: 0;
+
+  background-color: var(--color-dark);
+
+  &__inner {
+    padding: rem(20) rem(50);
+
+    display: flex;
+    column-gap: rem(20);
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      padding-block: rem(15);
+    }
+
+    @include mobile {
+      padding-inline: rem(30);
+    }
+  }
+
+  &__logo {
+    @include tablet {
+      width: rem(183);
+      height: rem(24);
+    }
+  }
+
+  &__overlay {
+    display: flex;
+    align-items: center;
+    column-gap: rem(10);
+
+    font-weight: 600;
+
+    @include desktop {
+      column-gap: 0;
+    }
+
+    @include tablet {
+      position: fixed;
+      inset: 0;
+
+      background-color: var(--color-dark);
+      flex-direction: column;
+      justify-content: center;
+      row-gap: rem(20);
+      padding: rem(20);
+
+      transition-duration: var(--transition-duration);
+
+      &:not(.is-active) {
+        @include hide;
+
+        translate: 100%;
+      }
+    }
+  }
+
+  &__menu,
+  &__list {
+    display: contents;
+  }
+
+  &__item {
+    padding-inline: rem(20);
+    font-size: rem(16);
+  }
+
+  &__link:nth-child(2) {
+    padding-inline: rem(30);
+  }
+
+}

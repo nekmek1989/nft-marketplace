@@ -1,0 +1,72 @@
+@use "../helpers/index" as *;
+
+.subscribe {
+  display: flex;
+  align-items: center;
+  column-gap: rem(80);
+
+  background-color: var(--color-grey-dark);
+  padding: rem(60);
+  border-radius: rem(20);
+
+  @include tablet {
+    padding: rem(40) rem(30);
+    column-gap: rem(30);
+
+  }
+
+  @include mobile {
+    flex-direction: column;
+    row-gap: rem(30);
+    background-color: transparent;
+  }
+
+  &__image {
+    @include abs-center;
+
+    &-wrapper {
+      position: relative;
+
+      overflow: hidden;
+      border-radius: rem(20);
+
+      width: rem(425);
+      height: rem(310);
+
+      @include tablet {
+        width: rem(300);
+        height: rem(280);
+      }
+
+      @include mobile {
+        width: rem(315);
+        height: rem(255);
+      }
+
+      @include mobile-s {
+        width: rem(250);
+        height: rem(200);
+      }
+    }
+  }
+
+  &__body {
+    @include tablet {
+      max-width: rem(300);
+    }
+  }
+
+  &__form {
+    &-heading {
+      &:not(:last-child) {
+        margin-bottom: rem(10);
+      }
+    }
+
+    &-description {
+      &:not(:last-child) {
+        margin-bottom: rem(40);
+      }
+    }
+  }
+}

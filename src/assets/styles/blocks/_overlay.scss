@@ -1,0 +1,22 @@
+@use "../helpers/index" as *;
+
+.overlay {
+  position: fixed;
+  inset: 0;
+
+  border: none;
+  margin: rem(100) 0 0 auto;
+
+  @include tablet {
+    margin-top: rem(74);
+  }
+
+  z-index: 101;
+  transition-duration: var(--transition-duration);
+
+  &:not(.is-active) {
+    @include hide;
+
+    translate: 100%;
+  }
+}

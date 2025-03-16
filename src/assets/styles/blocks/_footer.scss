@@ -1,0 +1,120 @@
+@use "../helpers/index" as *;
+
+.footer {
+  color: #CCCCCC;
+  background-color: var(--color-grey-dark);
+
+  &__inner {
+    padding-block: rem(40);
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    column-gap: rem(20);
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: rem(30);
+    }
+  }
+
+  &__soc1als {
+    max-width: rem(244);
+
+    @include tablet {
+      max-width: none;
+    }
+  }
+
+  &__logo:not(:last-child) {
+    margin-bottom: rem(30);
+
+    @include tablet {
+      margin-bottom: rem(20);
+    }
+  }
+
+  &__soc1als-description {
+    &:nth-child(2) {
+      margin-bottom: rem(20);
+    }
+
+    &:nth-child(3) {
+      margin-bottom: rem(15);
+    }
+  }
+
+  &__nav-heading {
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+
+      @include tablet {
+        margin-bottom: rem(20);
+      }
+    }
+    color: var(--color-light);
+  }
+
+  &__menu {
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+
+    &-item {
+      height: rem(22);
+      position: relative;
+
+      width: rem(133);
+    }
+
+    &-link {
+      @include abs-y;
+    }
+  }
+
+  &__form-heading {
+    color: var(--color-light);
+
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+
+      @include tablet {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  &__form-description {
+    &:not(:last-child) {
+      margin-bottom: rem(25);
+
+      @include tablet {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  &__error-message {
+    display: block;
+    margin-top: rem(10);
+  }
+
+  &__extra {
+     &-copyright {
+       margin-top: rem(30);
+       padding-top: rem(20);
+       border-top: rem(1) solid var(--color-grey);
+
+       @include tablet {
+         margin-top: rem(50);
+       }
+
+       @include mobile {
+         margin-top: rem(30);
+       }
+    }
+  }
+}

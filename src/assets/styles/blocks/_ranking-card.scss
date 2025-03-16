@@ -1,0 +1,75 @@
+@use "../helpers/index" as *;
+
+.ranking-card {
+  display: flex;
+  column-gap: rem(20);
+  align-items: center;
+
+  background-color: var(--color-grey-dark);
+  border-radius: rem(20);
+  padding: rem(12) rem(20);
+
+  @include mobile-s {
+    padding: rem(6) rem(10);
+    column-gap: rem(7);
+  }
+
+  &__number {
+    @include square(rem(30));
+    @include flex-center;
+
+    justify-self: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background-color: var(--color-dark);
+
+    color: var(--color-grey);
+
+    @include tablet {
+      background-color: transparent;
+    }
+  }
+
+  &__title {
+    display: flex;
+    column-gap: rem(20);
+    align-items: center;
+
+    max-width: rem(420);
+    width: 100%;
+
+    @include tablet {
+      column-gap: rem(12);
+    }
+  }
+
+  &__image {
+    @include tablet {
+      width: rem(24);
+    }
+  }
+
+  &__name {
+    @include mobile {
+      font-size: rem(16);
+      font-weight: 400;
+    }
+  }
+
+  &__change {
+    color: #00AC4F;
+  }
+
+  &__volume,
+  &__change,
+  &__sold{
+    max-width: rem(160);
+    width: 100%;
+
+    @include tablet {
+      max-width: rem(80);
+    }
+  }
+}

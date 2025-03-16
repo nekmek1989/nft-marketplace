@@ -1,0 +1,80 @@
+@use "../helpers/index" as *;
+
+.user-info {
+  padding-top: rem(50);
+
+
+  display: flex;
+  column-gap: rem(190);
+  justify-content: space-between;
+
+  @include tablet {
+    flex-direction: column;
+    row-gap: rem(30);
+
+    padding-top: rem(80);
+    padding-bottom: rem(30);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(30);
+
+    @include tablet {
+      display: contents;
+    }
+  }
+
+  &__title {
+    @include tablet {
+      order: -2;
+    }
+  }
+
+  &__metrics {
+    &-list {
+      display: flex;
+      justify-content: space-between;
+
+      @include tablet {
+        justify-content: start;
+        column-gap: rem(100);
+      }
+
+      @include mobile {
+        justify-content: space-between;
+        column-gap: rem(20);
+      }
+    }
+  }
+
+  &__bio,
+  &__links {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+
+    h5 {
+      color: var(--color-grey);
+    }
+  }
+
+
+  &__buttons {
+    display: flex;
+    column-gap: rem(20);
+    .button {
+      padding-inline: rem(30);
+    }
+
+    @include tablet {
+      order: -1;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+  }
+}

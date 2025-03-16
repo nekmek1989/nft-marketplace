@@ -1,0 +1,48 @@
+@use "../helpers/index" as *;
+
+.create-account-form {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(15);
+  align-items: start;
+
+  @include mobile {
+    align-items: center;
+  }
+
+  @include mobile-s {
+    align-items: center;
+  }
+
+  &__field-input {
+    padding: rem(10) rem(20);
+
+    font-size: rem(16);
+
+    border-radius: rem(20);
+    border: rem(1) solid var(--color-grey);
+
+    width: rem(330);
+
+    @include mobile-s {
+      width: rem(250);
+    }
+  }
+
+  &__button {
+    margin-top: rem(15);
+    width: rem(330);
+
+    @include mobile-s {
+      width: rem(250);
+    }
+
+  }
+
+  &__error-message {
+    p {
+      margin-top: rem(10);
+
+    }
+  }
+}

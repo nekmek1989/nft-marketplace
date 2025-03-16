@@ -1,0 +1,86 @@
+@use "../helpers/index" as *;
+
+.nft-card {
+
+  max-width: rem(330);
+
+  @include tablet {
+    width: rem(330);
+  }
+
+
+  @include mobile {
+    width: rem(315);
+  }
+
+  @include mobile-s {
+    width: rem(250);
+  }
+
+  &__image {
+    &-wrapper {
+      @include flex-center;
+      overflow: hidden;
+      border-radius: rem(20) rem(20) 0 0;
+
+      max-height: rem(295);
+
+      @include mobile {
+        height: rem(238);
+      }
+
+      @include mobile-s {
+        height: rem(220);
+      }
+    }
+  }
+
+  &__body {
+    padding: rem(20) rem(30) rem(25) rem(30);
+    border-radius: 0 0 rem(20) rem(20);
+    background-color: var(--color-grey-dark);
+
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(27);
+
+    @include tablet {
+      row-gap: rem(25);
+    }
+
+    @include mobile {
+      padding-inline: rem(20);
+    }
+
+    &_back-color-dark {
+      background-color: var(--color-dark);
+    }
+  }
+
+  &__name {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(5);
+  }
+
+  &__link-nft,
+  &__link-author {
+    width: max-content;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8);
+  }
+
+  &__metrics,
+  &__numbers {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__metrics {
+    color: var(--color-grey);
+  }
+}

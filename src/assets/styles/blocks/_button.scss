@@ -1,0 +1,121 @@
+@use "../helpers/index" as *;
+
+.button {
+  color: inherit;
+  transition-duration: var(--transition-duration);
+  cursor: pointer;
+
+  position: relative;
+
+  background-color: transparent;
+
+  border: rem(2) solid var(--color-accent);
+  border-radius: rem(20);
+
+  padding-inline: rem(50);
+
+  height: rem(60);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: rem(12);
+
+  font-size: rem(16);
+  font-weight: 600;
+  white-space: nowrap;
+
+  @include hover {
+    color: inherit;
+    background-color: var(--color-accent);
+
+    .button__line {
+      background-color: var(--color-light);
+    }
+  }
+
+  &_size-s {
+    height: rem(46);
+  }
+
+  &_size-l {
+    padding-inline: rem(40);
+    display: flex;
+    column-gap: rem(20);
+    justify-content: start;
+
+    height: rem(72);
+    width: 100%;
+
+    @include tablet {
+      height: rem(60);
+    }
+  }
+
+  &_accent {
+    background-color: var(--color-accent);
+
+    @include hover {
+      background-color: transparent;
+    }
+  }
+
+  &_white {
+    background-color: var(--color-light);
+    border-color: var(--color-light);
+
+    color: var(--color-dark);
+
+    @include hover {
+      .icon::before {
+        background-image: url("/src/assets/images/images/icons/eye-white.svg")
+      }
+    }
+  }
+
+
+  &__line {
+    display: block;
+    width: rem(15);
+    height: rem(2);
+
+    background-color: var(--color-accent);
+    border-radius: rem(20);
+
+    transition-duration: var(--transition-duration);
+
+    &.is-active {
+      background-color: var(--color-light);
+    }
+
+    &:last-child {
+      position: absolute;
+
+      rotate: 90deg;
+      top: 50%;
+
+      &.is-active {
+        width: rem(10);
+        rotate: 58deg;
+        left: rem(-2);
+        top: 56%;
+      }
+
+    }
+
+    &:first-child {
+      position: absolute;
+      top: 50%;
+      &.is-active {
+        rotate: 112deg;
+        top: 42%;
+      }
+    }
+
+    &-wrapper {
+      @include square(rem(20));
+
+      position: relative;
+    }
+  }
+}

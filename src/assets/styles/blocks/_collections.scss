@@ -1,0 +1,15 @@
+@use "../helpers/index" as*;
+
+.collections {
+  &__list {
+    scroll-snap-type: x mandatory;
+    overflow-x: auto;
+    scrollbar-width: none;
+
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__item {
+    scroll-snap-align: start;
+  }
+}

@@ -1,0 +1,57 @@
+@use "../helpers/index" as *;
+
+.section {
+  padding-block: rem(80);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(60);
+
+  @include tablet {
+    row-gap: rem(40);
+  }
+
+  @include mobile {
+    padding-block: rem(40);
+  }
+
+  &_small-padding-block {
+    padding-block: rem(40);
+
+    @include tablet {
+      padding-block: rem(30);
+    }
+  }
+
+  &_small-gap {
+    row-gap: rem(30);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    column-gap: rem(80);
+
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      row-gap: rem(10);
+
+      @include mobile {
+        order: -2;
+      }
+    }
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  &__body {
+    @include mobile {
+      order: -1;
+    }
+  }
+}

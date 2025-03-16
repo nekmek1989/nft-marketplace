@@ -1,0 +1,24 @@
+@use "../helpers/index" as *;
+
+.tags {
+  &__list {
+    display: flex;
+    column-gap: rem(20);
+
+    @include tablet {
+      flex-direction: column;
+      row-gap: rem(20);
+    }
+  }
+
+  &__item {
+    width: max-content;
+
+    padding: rem(12) rem(30);
+
+    background-color: var(--color-grey-dark);
+    border-radius: rem(20);
+
+    font-weight: 600;
+  }
+}

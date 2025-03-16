@@ -1,0 +1,9 @@
+@use "../helpers/index" as *;
+
+.discover-features {
+  &__list {
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+}

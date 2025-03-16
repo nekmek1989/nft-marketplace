@@ -1,0 +1,72 @@
+@use "../helpers/index" as *;
+
+.feature-card {
+  background-color: var(--color-grey-dark);
+  border-radius: rem(20);
+  padding: rem(10) rem(30) rem(30) rem(30);
+
+  text-align: center;
+
+  transition-duration: var(--transition-duration);
+
+  @include tablet {
+    padding-inline: rem(20);
+  }
+
+  @include mobile {
+    text-align: start;
+    padding: rem(20);
+  }
+
+  &__image {
+    @include tablet {
+      width: rem(160);
+    }
+
+    @include mobile {
+      width: rem(100);
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+
+    @include mobile {
+      flex-direction: row;
+      column-gap: rem(20);
+    }
+
+    @include mobile-s {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+  }
+
+  &__title {
+    @include tablet {
+      font-size: rem(16);
+    }
+  }
+
+  &__description {
+      color: var(--color-light);
+
+    @include tablet {
+      p {
+        font-size: rem(12);
+      }
+    }
+  }
+
+  @include hover {
+    box-shadow: 0 0 30px rgba(162, 89, 255, 0.5);
+  }
+}

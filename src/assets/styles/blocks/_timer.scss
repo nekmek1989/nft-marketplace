@@ -1,0 +1,46 @@
+@use "../helpers/index" as *;
+
+.timer {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(10);
+
+  padding: rem(30);
+
+  background-color: rgba(59, 59, 59, 0.5);
+  border-radius: rem(20);
+
+  @include mobile-s {
+    padding: rem(20);
+  }
+
+  &__counter {
+    display: flex;
+    column-gap: rem(38);
+
+
+    div {
+      &:nth-last-child(-n+2) {
+        position: relative;
+        &::before {
+          position: absolute;
+          top: -4%;
+          left: -50%;
+
+          content: ':';
+          font-size: rem(28);
+        }
+      }
+    }
+  }
+
+  &__hours,
+  &__minutes,
+  &__seconds {
+    width: rem(53);
+  }
+
+
+}

@@ -1,0 +1,58 @@
+@use "../helpers/index" as *;
+
+.burger-button {
+  --buttonSize: #{rem(44)};
+
+  @include square(var(--buttonSize));
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  row-gap: rem(5);
+  flex-direction: column;
+  align-items: start;
+
+  background-color: transparent;
+  border: none;
+  border-radius: rem(7);
+
+  padding-left: rem(13);
+
+  &__line {
+    background-color: var(--color-light);
+
+    height: rem(2);
+    width: rem(13);
+
+    &:nth-child(2) {
+      width: rem(18);
+    }
+  }
+
+  @include hover {
+    background-color: var(--color-accent);
+  }
+
+  &.is-active {
+    .burger-button__line {
+      &:first-child,
+      &:last-child {
+        @include abs-center;
+
+        width: 50%;
+      }
+
+      &:first-child {
+        rotate: 45deg;
+      }
+
+      &:nth-child(2) {
+        display: none;
+      }
+
+      &:last-child {
+         rotate: -45deg;
+      }
+    }
+  }
+}

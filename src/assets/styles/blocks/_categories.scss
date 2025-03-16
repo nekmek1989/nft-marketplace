@@ -1,0 +1,15 @@
+@use "../helpers/index" as *;
+
+.categories {
+  &__list {
+    @include mobile {
+      grid-template-columns: repeat(2, 1fr);
+
+    }
+  }
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}

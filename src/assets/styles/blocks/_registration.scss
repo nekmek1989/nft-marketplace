@@ -1,0 +1,112 @@
+@use "../helpers/index" as *;
+
+.registration {
+  &__inner {
+    max-width: rem(1280);
+    margin-inline: auto;
+
+    display: flex;
+    column-gap: rem(30);
+
+    @include tablet {
+      column-gap: rem(10);
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+
+  &__image {
+    @include abs-center;
+
+    max-width: none;
+  }
+
+  &__background-image {
+    position: relative;
+
+    width: rem(610);
+    height: rem(690);
+
+    overflow: hidden;
+
+    @include tablet {
+      height: rem(615);
+    }
+
+    @include mobile {
+      height: rem(232);
+      width: auto;
+    }
+
+    &_height-s {
+      height: rem(642);
+
+      @include tablet {
+        height: rem(615);
+      }
+
+      @include mobile {
+        height: rem(232);
+        width: auto;
+      }
+    }
+  }
+
+  &__body {
+    padding: rem(88) rem(30);
+
+    @include tablet {
+      padding-block: rem(64);
+    }
+
+    @include mobile {
+      padding-top: rem(30);
+      padding-bottom: rem(40);
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      text-wrap: balance;
+    }
+  }
+
+  &__title {
+    &:not(:last-child) {
+      margin-bottom: rem(20);
+
+    }
+  }
+
+  &__description {
+    &:not(:last-child) {
+      margin-bottom: rem(40);
+
+      @include mobile {
+        margin-bottom: rem(20);
+      }
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+  }
+
+  &__item {
+    width: rem(320);
+
+    @include mobile-s {
+      width: rem(240);
+    }
+  }
+
+  &__icon {
+    @include tablet {
+      width: rem(32);
+    }
+  }
+}

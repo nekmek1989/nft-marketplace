@@ -1,0 +1,72 @@
+@use "../helpers/index" as *;
+
+.collection-card {
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(15);
+
+  width: rem(330);
+
+  @include mobile {
+    width: rem(315);
+  }
+
+  @include mobile-s {
+    width: rem(250);
+  }
+
+  &_adoptive {
+    width: 100%;
+
+    @include mobile {
+      width: rem(315);
+    }
+
+    @include mobile-s {
+      width: rem(250);
+    }
+  }
+
+  &__nft {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr auto;
+    gap: rem(15);
+
+    &-image {
+      &:first-child {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  &__discover-more-link {
+    @include flex-center;
+
+    background-color: var(--color-accent);
+    border-radius: rem(20);
+    border: 2px solid var(--color-accent);
+
+    @include hover {
+      background-color: transparent;
+      color: var(--color-light);
+    }
+
+    p {
+      @include mobile-s {
+        font-size: rem(20);
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+  }
+
+  &__profile {
+    width: max-content;
+  }
+
+}

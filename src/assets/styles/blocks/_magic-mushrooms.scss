@@ -1,0 +1,71 @@
+@use "../helpers/index" as *;
+
+.magic-mushrooms {
+  background-image: url("/src/assets/images/mushroom.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  max-width: rem(1280);
+  margin-inline: auto;
+
+  @include tablet {
+    background-image: url("/src/assets/images/mushroom-tablet.svg");
+
+  }
+
+  &__inner {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    column-gap: rem(30);
+
+    padding-top: rem(360);
+    padding-bottom: rem(60);
+
+    @include tablet {
+      padding-top: rem(320);
+      padding-bottom: rem(33);
+    }
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: rem(30);
+      align-items: normal;
+
+      padding-top: rem(120);
+      padding-bottom: rem(40);
+    }
+
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(30);
+    align-items: start;
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  &__author {
+    background-color: var(--color-grey-dark);
+    padding: rem(10) rem(20);
+    border-radius: rem(20);
+
+    @include mobile {
+      align-self: start;
+    }
+  }
+
+  &__button {
+    order: 1;
+  }
+
+  &__timer {
+    @include mobile {
+      align-self: start;
+    }
+  }
+}

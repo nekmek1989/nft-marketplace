@@ -1,0 +1,30 @@
+@use "helpers/index" as *;
+
+:root {
+  --color-dark: #2B2B2B;
+  --color-grey-dark: #3B3B3B;
+  --color-grey: #858584;
+  --color-light: #FFFFFF;
+  --color-accent: #A259FF;
+
+  --gradient: linear-gradient(
+                  169.79deg,
+                  #A259FF 58.83%,
+                  #377DF7 121.146%
+  );
+
+  --font-base: 'Work Sans', 'sans selif';
+  --font-accent: 'Space Mono', 'sans selif';
+
+  --container-width: #{rem(1050)};
+  --container-padding-x: #{rem(30)};
+
+  --section-padding-y: #{rem(80)};
+
+  @include tablet {
+    --container-width: #{rem(690)};
+    --section-padding-y: #{rem(40)};
+  }
+
+  --transition-duration: 0.2s;
+}

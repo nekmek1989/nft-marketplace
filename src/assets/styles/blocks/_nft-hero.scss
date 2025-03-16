@@ -1,0 +1,75 @@
+@use "../helpers/index" as *;
+
+.nft-hero {
+  display: flex;
+  justify-content: space-between;
+  column-gap: rem(30);
+  align-items: start;
+
+  @include mobile {
+    flex-direction: column;
+    row-gap: rem(20);
+  }
+
+  &__body {
+    max-width: rem(605);
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(30);
+
+    @include tablet {
+      max-width: rem(365);
+    }
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  &__heaading,
+  &__author,
+  &__description,
+  &__details {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10);
+  }
+
+  &__heading {
+    @include mobile {
+      order: -2;
+    }
+  }
+
+  &__title {
+   color: var(--color-grey);
+ }
+
+  &__mint {
+    color: var(--color-grey);
+  }
+
+  &__details {
+    &-link {
+      display: flex;
+      column-gap: rem(10);
+
+      width: max-content;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+  }
+
+  &__timer {
+    @include mobile {
+      order: -1;
+
+      align-self: center;
+    }
+  }
+
+}

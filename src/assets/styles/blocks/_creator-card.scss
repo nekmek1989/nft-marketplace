@@ -1,0 +1,78 @@
+@use "../helpers/index" as *;
+
+.creator-card {
+  background-color: var(--color-grey-dark);
+  border-radius: rem(20);
+  padding: rem(20);
+
+  position: relative;
+
+  &__rank {
+    --rankSize: #{rem(30)};
+
+    @include square(var(--rankSize));
+    @include flex-center;
+    position: absolute;
+
+    color: var(--color-grey);
+    border-radius: 50%;
+    background-color: var(--color-dark);
+
+    @include tablet {
+      top: rem(12);
+      left: rem(12);
+    }
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(20);
+
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet {
+      flex-direction: row;
+      column-gap: rem(20);
+      justify-content: start;
+    }
+  }
+
+  &__icon {
+    --iconSize: #{rem(120)};
+
+    @include square(var(--iconSize));
+
+    @include tablet {
+      --iconSize: #{rem(60)};
+    }
+  }
+
+  &__body {
+    text-align: center;
+
+    @include tablet {
+      text-align: start;
+    }
+  }
+
+  &__description {
+    display: flex;
+    column-gap: rem(10);
+
+
+    @include desktop-above {
+      white-space: nowrap;
+    }
+
+    @include tablet {
+      column-gap: rem(15);
+    }
+
+    p:first-child {
+      color: var(--color-grey);
+    }
+
+  }
+}
